@@ -13,14 +13,19 @@ source:
 build:
   number: 2
   script:
-    - cargo install --locked --no-track --root "${PREFIX}" --path cli/
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+    env:
+      CARGO_PROFILE_RELEASE_STRIP: symbols
+      CARGO_PROFILE_RELEASE_LTO: fat
+    content:
+      - cargo install --locked --no-track --bins --root "${{ PREFIX }}" --path cli/
+      - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
   build:
     - ${{ compiler("rust") }}
     - ${{ stdlib("c") }}
     - cargo-bundle-licenses
+    - cargo-auditable
 
 tests:
   - package_contents:
@@ -36,9 +41,10 @@ about:
   summary: Lint commit messages with conventional commit messages
   description: |
     Guard rail for your commit messages for sustainable development
-  license: MIT
+  license: MIT OR Apache-2.0
   license_file:
     - LICENSE-MIT
+    - LICENSE-APACHE
     - THIRDPARTY.yml
 
 extra:
