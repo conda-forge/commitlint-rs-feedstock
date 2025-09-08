@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/commitlint-rs-f
 
 Home: https://keisukeyamashita.github.io/commitlint-rs/
 
-Package license: MIT
+Package license: MIT OR Apache-2.0
 
 Summary: Lint commit messages with conventional commit messages
 
