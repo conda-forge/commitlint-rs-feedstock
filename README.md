@@ -197,4 +197,5 @@ Feedstock Maintainers
 =====================
 
 * [@AntoinePrv](https://github.com/AntoinePrv/)
+* [@KeisukeYamashita](https://github.com/KeisukeYamashita/)
 
