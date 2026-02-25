@@ -1,6 +1,6 @@
 context:
   name: commitlint-rs
-  version: "0.2.3"
+  version: "0.2.4"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/keisukeyamashita/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 9c599fae4e0d6b66ba256e30b5a94b214586ae4778e721aa176f905ae332e078
+  sha256: 1110a11d5f1635457dbdbf0dbfe63d471f1b7751ce825c8fc9878a86ae134935
 
 build:
-  number: 2
+  number: 0
   script:
     env:
       CARGO_PROFILE_RELEASE_STRIP: symbols
